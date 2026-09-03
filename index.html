@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zono AI — AI Assistant</title>
+
+    <meta
+        name="description"
+        content="Zono AI is an AI assistant created by Ahathish Kumaran and Prithish, with help from their teachers."
+    >
+
+    <meta
+        name="author"
+        content="Ahathish Kumaran, Prithish"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://zona-ai.onrender.com/"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR BACKDROP
+    ====================================================== -->
+
+    <div
+        id="sidebarBackdrop"
+        class="sidebar-backdrop"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        id="sidebar"
+        class="sidebar"
+    >
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="sidebar-header">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    Z
+                </div>
+
+                <div>
+
+                    <div class="brand-name">
+                        ZONO AI
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Your Smart AI Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="closeSidebar"
+                class="icon-button"
+                type="button"
+                aria-label="Close sidebar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- NEW CHAT -->
+
+        <button
+            id="newChatButton"
+            class="new-chat-button"
+            type="button"
+        >
+
+            <span class="ui-icon">
+                +
+            </span>
+
+            <span>
+                New Chat
+            </span>
+
+        </button>
+
+
+        <!-- =================================================
+             WORKSPACE
+        ================================================== -->
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-label">
+                Workspace
+            </div>
+
+
+            <button
+                class="nav-item active"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Chats
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <!-- =================================================
+             RECENT CHATS
+        ================================================== -->
+
+        <div class="history-section">
+
+            <div class="nav-label">
+                Recent Chats
+            </div>
+
+
+            <div
+                id="chatHistory"
+                class="chat-history"
+            ></div>
+
+
+            <!-- DELETE CHAT -->
+
+            <button
+                id="deleteChatButton"
+                class="delete-chat-button"
+                type="button"
+                title="Delete current chat"
+            >
+
+                <span
+                    class="delete-chat-icon"
+                    aria-hidden="true"
+                >
+                    ⌫
+                </span>
+
+                <span>
+                    Delete Chat
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+        ================================================== -->
+
+        <div class="sidebar-footer">
+
+            <div class="status-dot"></div>
+
+            <span>
+                Zono is ready
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+    ====================================================== -->
+
+    <main class="app">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <button
+                id="menuButton"
+                class="icon-button menu-button"
+                type="button"
+                aria-label="Open sidebar"
+            >
+
+                <span class="menu-lines">
+                    ☰
+                </span>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <strong>
+                    Zono AI
+                </strong>
+
+                <span>
+                    AI assistant
+                </span>
+
+            </div>
+
+
+            <div class="topbar-spacer"></div>
+
+        </header>
+
+
+        <!-- =================================================
+             CHAT AREA
+        ================================================== -->
+
+        <section
+            id="chatArea"
+            class="chat-area"
+        >
+
+            <!-- =================================================
+                 WELCOME SCREEN
+            ================================================== -->
+
+            <div
+                id="welcome"
+                class="welcome"
+            >
+
+                <div class="welcome-orb">
+                    Z
+                </div>
+
+
+                <h1>
+                    What can I help you with?
+                </h1>
+
+
+                <p>
+                    Ask about studies, science, law, countries, current events, or anything you want to understand.
+                </p>
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="suggestions">
+
+
+                    <!-- SCIENCE -->
+
+                    <button
+                        type="button"
+                        class="suggestion"
+                        data-prompt="Explain photosynthesis and how it works."
+                    >
+
+                        <span>
+                            Science
+                        </span>
+
+                        <small>
+                            Explain a concept
+                        </small>
+
+                    </button>
+
+
+                    <!-- LAW -->
+
+                    <button
+                        type="button"
+                        class="suggestion"
+                        data-prompt="Explain the court system in India."
+                    >
+
+                        <span>
+                            Law &amp; Courts
+                        </span>
+
+                        <small>
+                            Learn how it works
+                        </small>
+
+                    </button>
+
+
+                    <!-- LOCAL KNOWLEDGE -->
+
+                    <button
+                        type="button"
+                        class="suggestion"
+                        data-prompt="Tell me about the Mayiladuthurai district."
+                    >
+
+                        <span>
+                            Local Knowledge
+                        </span>
+
+                        <small>
+                            Explore Sirkali &amp; Mayiladuthurai
+                        </small>
+
+                    </button>
+
+
+                    <!-- WORLD -->
+
+                    <button
+                        type="button"
+                        class="suggestion"
+                        data-prompt="How many countries are there in the world?"
+                    >
+
+                        <span>
+                            World
+                        </span>
+
+                        <small>
+                            Countries &amp; geography
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ATTACHMENT PREVIEW
+        ================================================== -->
+
+        <div
+            id="attachmentPreview"
+            class="attachment-preview"
+        ></div>
+
+
+        <!-- =================================================
+             COMPOSER
+        ================================================== -->
+
+        <section class="composer">
+
+            <div class="composer-box">
+
+
+                <!-- MESSAGE INPUT -->
+
+                <textarea
+                    id="messageInput"
+                    rows="1"
+                    placeholder="Message Zono..."
+                    autocomplete="off"
+                ></textarea>
+
+
+                <!-- COMPOSER ACTIONS -->
+
+                <div class="composer-actions">
+
+
+                    <!-- FILE INPUT -->
+
+                    <input
+                        id="fileInput"
+                        type="file"
+                        hidden
+                        accept="image/*,.pdf,.doc,.docx,.txt"
+                    >
+
+
+                    <!-- ATTACH -->
+
+                    <button
+                        id="attachButton"
+                        class="composer-button"
+                        type="button"
+                        title="Attach a file"
+                    >
+
+                        <span class="button-icon">
+                            ＋
+                        </span>
+
+                        <span>
+                            Attach
+                        </span>
+
+                    </button>
+
+
+                    <!-- SCREENSHOT -->
+
+                    <button
+                        id="screenshotButton"
+                        class="composer-button"
+                        type="button"
+                        title="Read screenshot"
+                    >
+
+                        <span class="button-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Screenshot
+                        </span>
+
+                    </button>
+
+
+                    <!-- VOICE
+                         KEPT — THIS IS THE COMPOSER
+                         VOICE INPUT BUTTON.
+                    -->
+
+                    <button
+                        id="voiceButton"
+                        class="composer-button"
+                        type="button"
+                        title="Voice input"
+                    >
+
+                        <span class="button-icon">
+                            ◉
+                        </span>
+
+                        <span>
+                            Voice
+                        </span>
+
+                    </button>
+
+
+                    <!-- SEND -->
+
+                    <button
+                        id="sendButton"
+                        class="composer-button send-button"
+                        type="button"
+                        title="Send message"
+                    >
+
+                        <span class="button-icon">
+                            ➤
+                        </span>
+
+                        <span>
+                            Send
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPOSER NOTE -->
+
+            <div class="composer-note">
+                Zono can read screenshots and documents. Verify important legal information with an official source.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

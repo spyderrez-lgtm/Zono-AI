@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 10000;
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-const TEXT_MODEL = process.env.GROQ_TEXT_MODEL || "openai/gpt-oss-120b";
+const TEXT_MODEL = process.env.GROQ_TEXT_MODEL || "llama-3.3-70b-versatile";
 const VISION_MODEL = process.env.GROQ_VISION_MODEL || "qwen/qwen3.6-27b";
 const IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL || "gpt-image-2";
 
@@ -273,8 +273,7 @@ async function groqChat(messages, options = {}) {
         model: options.model || TEXT_MODEL,
         messages,
         temperature: options.temperature ?? 0.35,
-        max_completion_tokens: options.maxTokens ?? 1200,
-        citation_options: "enabled"
+        max_completion_tokens: options.maxTokens ?? 1200
     };
 
     if (options.searchSettings) {

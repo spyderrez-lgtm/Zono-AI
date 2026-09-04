@@ -1,0 +1,14 @@
+{
+  "name": "Zono AI",
+  "short_name": "Zono AI",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Student-focused AI assistant for learning and research.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

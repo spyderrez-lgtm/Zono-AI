@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://zono-ai-58xt.onrender.com/sitemap.xml
